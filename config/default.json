@@ -1,0 +1,22 @@
+{
+  "model": "gpt-5.5",
+  "mode": "mock",
+  "max_parallel_agents": 12,
+  "workflow": {
+    "direct_subagents": 5,
+    "council_groups": 4,
+    "council_subagents_per_group": 5,
+    "deep_research_subagents": 5,
+    "security_subagents": 5
+  },
+  "budgets": {
+    "orchestration": {"input_tokens": 12000, "output_tokens": 1500},
+    "context_router": {"input_tokens": 2000, "output_tokens": 600},
+    "context_auditor": {"input_tokens": 2500, "output_tokens": 500},
+    "direct_subagent": {"input_tokens": 2500, "output_tokens": 600},
+    "council_subagent": {"input_tokens": 4500, "output_tokens": 750},
+    "research_subagent": {"input_tokens": 8000, "output_tokens": 1200},
+    "security_subagent": {"input_tokens": 6000, "output_tokens": 900},
+    "final_synthesis": {"input_tokens": 12000, "output_tokens": 2000}
+  }
+}

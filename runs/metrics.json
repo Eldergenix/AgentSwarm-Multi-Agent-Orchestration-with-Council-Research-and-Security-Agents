@@ -1,0 +1,69 @@
+{
+  "rows": [
+    {
+      "metric": "Input tokens",
+      "brute_force": 701000.0,
+      "optimized": 181700,
+      "unit": "tokens",
+      "improvement_pct": 74.1,
+      "note": "Scoped packets plus shared capsule references."
+    },
+    {
+      "metric": "Output tokens",
+      "brute_force": 53600,
+      "optimized": 23300,
+      "unit": "tokens",
+      "improvement_pct": 56.5,
+      "note": "Structured findings replace verbose prose."
+    },
+    {
+      "metric": "Estimated GPT-5.5 token cost",
+      "brute_force": 5.113,
+      "optimized": 1.6075,
+      "unit": "USD",
+      "improvement_pct": 68.6,
+      "note": "Uses published input/output token prices; tool-call costs excluded."
+    },
+    {
+      "metric": "Duplicate-context ratio",
+      "brute_force": 0.42,
+      "optimized": 0.1,
+      "unit": "ratio",
+      "improvement_pct": 76.2,
+      "note": "Shared task capsule plus auditor dedupe."
+    },
+    {
+      "metric": "Mean prompt-to-final latency",
+      "brute_force": 47.5,
+      "optimized": 31.2,
+      "unit": "seconds",
+      "improvement_pct": 34.3,
+      "note": "Representative parallel execution model; network variance excluded."
+    },
+    {
+      "metric": "Hallucination exposure score",
+      "brute_force": 0.34,
+      "optimized": 0.18,
+      "unit": "0-1",
+      "improvement_pct": 47.1,
+      "note": "Lower score reflects narrower context and evidence/risk separation."
+    },
+    {
+      "metric": "Relevant-context density",
+      "brute_force": 0.46,
+      "optimized": 0.81,
+      "unit": "0-1",
+      "improvement_pct": 76.1,
+      "note": "Higher score means more input tokens are role-relevant."
+    }
+  ],
+  "assumptions": {
+    "subagents": 35,
+    "parent_agents": 6,
+    "model": "gpt-5.5",
+    "input_price_per_1m_tokens_usd": 5.0,
+    "output_price_per_1m_tokens_usd": 30.0,
+    "workload": "5 direct sub-agents + 4 council groups x 5 + 1 research group x 5 + 1 security group x 5",
+    "measurement_type": "expected/simulated representative workload"
+  }
+}

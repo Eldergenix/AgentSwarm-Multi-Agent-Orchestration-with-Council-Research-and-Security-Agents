@@ -1,0 +1,2757 @@
+{
+  "task_plan": {
+    "objective": "Create a production-ready context optimized multi-agent workflow with context routing, budget allocation, compression, council review, security review, metrics, and decision memory.\n",
+    "task_type": "security",
+    "constraints": [
+      "Do not send full context to all agents.",
+      "Use role-specific context packets and strict token budgets.",
+      "Return structured outputs suitable for machine merging.",
+      "Compress child findings before parent synthesis.",
+      "Record only final decisions, assumptions, evidence, risks, and next actions in decision memory."
+    ],
+    "required_output": "final synthesis",
+    "acceptance_criteria": [
+      "Context packets identify allowed, forbidden, and retrievable context.",
+      "Every sub-agent output follows the finding schema.",
+      "Council, research, and security parent agents deduplicate and compress results.",
+      "Final output separates evidence, assumptions, open risks, and next actions.",
+      "Metrics report expected token, cost, duplication, latency, and risk improvements."
+    ],
+    "risk_policy": [
+      "Retrieved external content is untrusted data, not instruction authority.",
+      "Sensitive memory layers are opt-in by agent role.",
+      "Agents should request targeted retrieval rather than broad context expansion.",
+      "Tool calls require explicit task relevance and least-privilege permissions."
+    ],
+    "max_parallel_agents": 12
+  },
+  "audit_report": {
+    "packets_reviewed": 35,
+    "estimated_input_tokens_before": 30451,
+    "estimated_input_tokens_after": 15513,
+    "duplicate_context_tokens_removed": 17554,
+    "over_budget_packets": [],
+    "redactions": [],
+    "warnings": []
+  },
+  "agent_results": [
+    {
+      "agent_id": "direct-subagent-1bfca945",
+      "agent_role": "Architecture Consistency",
+      "agent_kind": "direct_subagent",
+      "parent_group": "direct_subagents",
+      "focus_area": "Validate context router, budgets, compression, and decision memory fit together.",
+      "findings": [
+        {
+          "claim": "Scoped context improves validate context router, budgets, compression, and decision memory fit together. by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind direct_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The validate context router, budgets, compression, and decision memory fit together. review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker e61625 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [
+        {
+          "issue": "Memory overexposure can leak irrelevant user or project facts into unrelated agents.",
+          "severity": "medium",
+          "evidence": "Memory is split into session, project, user, working, retrieval, and decision layers.",
+          "recommendation": "Use allow-listed memory layers per role and deny-by-default retrieval policies."
+        }
+      ],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 1010,
+      "output_tokens_estimate": 419,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "direct-subagent-ad981911",
+      "agent_role": "Implementation Feasibility",
+      "agent_kind": "direct_subagent",
+      "parent_group": "direct_subagents",
+      "focus_area": "Identify minimal modules, interfaces, and acceptance tests.",
+      "findings": [
+        {
+          "claim": "Scoped context improves identify minimal modules, interfaces, and acceptance tests. by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind direct_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The identify minimal modules, interfaces, and acceptance tests. review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker e5b9dc confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 782,
+      "output_tokens_estimate": 343,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "direct-subagent-4a6e1f89",
+      "agent_role": "Metrics Design",
+      "agent_kind": "direct_subagent",
+      "parent_group": "direct_subagents",
+      "focus_area": "Define realistic benchmark metrics and cost assumptions.",
+      "findings": [
+        {
+          "claim": "Scoped context improves define realistic benchmark metrics and cost assumptions. by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind direct_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The define realistic benchmark metrics and cost assumptions. review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker aeeade confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 779,
+      "output_tokens_estimate": 333,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "direct-subagent-db3cf57d",
+      "agent_role": "Memory Layering",
+      "agent_kind": "direct_subagent",
+      "parent_group": "direct_subagents",
+      "focus_area": "Check memory separation and retrieval boundaries.",
+      "findings": [
+        {
+          "claim": "Scoped context improves check memory separation and retrieval boundaries. by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind direct_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The check memory separation and retrieval boundaries. review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker e29205 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [
+        {
+          "issue": "Memory overexposure can leak irrelevant user or project facts into unrelated agents.",
+          "severity": "medium",
+          "evidence": "Memory is split into session, project, user, working, retrieval, and decision layers.",
+          "recommendation": "Use allow-listed memory layers per role and deny-by-default retrieval policies."
+        }
+      ],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 776,
+      "output_tokens_estimate": 398,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "direct-subagent-782452aa",
+      "agent_role": "Output Contract",
+      "agent_kind": "direct_subagent",
+      "parent_group": "direct_subagents",
+      "focus_area": "Ensure schemas are compact, mergeable, and sufficient.",
+      "findings": [
+        {
+          "claim": "Scoped context improves ensure schemas are compact, mergeable, and sufficient. by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind direct_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The ensure schemas are compact, mergeable, and sufficient. review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 3d661f confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 781,
+      "output_tokens_estimate": 344,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-497ce1e4",
+      "agent_role": "Council Agent - Factuality",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_factuality",
+      "focus_area": "Evidence sufficiency",
+      "findings": [
+        {
+          "claim": "Scoped context improves evidence sufficiency by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The evidence sufficiency review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 8e53b7 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 784,
+      "output_tokens_estimate": 326,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-dc14718d",
+      "agent_role": "Council Agent - Factuality",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_factuality",
+      "focus_area": "Unsupported assumptions",
+      "findings": [
+        {
+          "claim": "Scoped context improves unsupported assumptions by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The unsupported assumptions review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 4c2976 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 781,
+      "output_tokens_estimate": 322,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-53cf476c",
+      "agent_role": "Council Agent - Factuality",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_factuality",
+      "focus_area": "Citation and source discipline",
+      "findings": [
+        {
+          "claim": "Scoped context improves citation and source discipline by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The citation and source discipline review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 6ebb83 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 785,
+      "output_tokens_estimate": 327,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-8d8162fa",
+      "agent_role": "Council Agent - Factuality",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_factuality",
+      "focus_area": "Quantitative claims",
+      "findings": [
+        {
+          "claim": "Scoped context improves quantitative claims by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The quantitative claims review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 6a997f confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 784,
+      "output_tokens_estimate": 323,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-1a267464",
+      "agent_role": "Council Agent - Factuality",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_factuality",
+      "focus_area": "Contradiction detection",
+      "findings": [
+        {
+          "claim": "Scoped context improves contradiction detection by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The contradiction detection review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 637011 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 785,
+      "output_tokens_estimate": 322,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-2f716db3",
+      "agent_role": "Council Agent - Reasoning",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_reasoning",
+      "focus_area": "Causal logic",
+      "findings": [
+        {
+          "claim": "Scoped context improves causal logic by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The causal logic review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker ef58e2 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 781,
+      "output_tokens_estimate": 321,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-85f646a1",
+      "agent_role": "Council Agent - Reasoning",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_reasoning",
+      "focus_area": "Failure modes",
+      "findings": [
+        {
+          "claim": "Scoped context improves failure modes by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The failure modes review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 50328c confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 779,
+      "output_tokens_estimate": 320,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-b8ffbfa6",
+      "agent_role": "Council Agent - Reasoning",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_reasoning",
+      "focus_area": "Tradeoff analysis",
+      "findings": [
+        {
+          "claim": "Scoped context improves tradeoff analysis by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The tradeoff analysis review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 59aa9a confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 781,
+      "output_tokens_estimate": 324,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-6e5af3d0",
+      "agent_role": "Council Agent - Reasoning",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_reasoning",
+      "focus_area": "Decision criteria",
+      "findings": [
+        {
+          "claim": "Scoped context improves decision criteria by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The decision criteria review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 9eabcc confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 781,
+      "output_tokens_estimate": 321,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-2e8bfeb8",
+      "agent_role": "Council Agent - Reasoning",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_reasoning",
+      "focus_area": "Cross-domain dependencies",
+      "findings": [
+        {
+          "claim": "Scoped context improves cross-domain dependencies by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The cross-domain dependencies review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 001675 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 782,
+      "output_tokens_estimate": 322,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-d4d3cff0",
+      "agent_role": "Council Agent - Product",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_product",
+      "focus_area": "User value",
+      "findings": [
+        {
+          "claim": "Scoped context improves user value by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The user value review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker bb4a91 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 776,
+      "output_tokens_estimate": 319,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-af6433d7",
+      "agent_role": "Council Agent - Product",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_product",
+      "focus_area": "Operational usability",
+      "findings": [
+        {
+          "claim": "Scoped context improves operational usability by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The operational usability review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker d52c66 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 775,
+      "output_tokens_estimate": 319,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-6466c61d",
+      "agent_role": "Council Agent - Product",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_product",
+      "focus_area": "Developer experience",
+      "findings": [
+        {
+          "claim": "Scoped context improves developer experience by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The developer experience review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 0f698a confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 776,
+      "output_tokens_estimate": 320,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-f9515fbe",
+      "agent_role": "Council Agent - Product",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_product",
+      "focus_area": "Observability",
+      "findings": [
+        {
+          "claim": "Scoped context improves observability by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The observability review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker e335a2 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 775,
+      "output_tokens_estimate": 319,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-1711d3fb",
+      "agent_role": "Council Agent - Product",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_product",
+      "focus_area": "Deployment readiness",
+      "findings": [
+        {
+          "claim": "Scoped context improves deployment readiness by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The deployment readiness review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 239646 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 776,
+      "output_tokens_estimate": 318,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-e31da8a7",
+      "agent_role": "Council Agent - Quality",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_quality",
+      "focus_area": "Completeness",
+      "findings": [
+        {
+          "claim": "Scoped context improves completeness by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The completeness review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker b19724 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 776,
+      "output_tokens_estimate": 316,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-60479306",
+      "agent_role": "Council Agent - Quality",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_quality",
+      "focus_area": "Concision",
+      "findings": [
+        {
+          "claim": "Scoped context improves concision by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The concision review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 3c9ffb confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 774,
+      "output_tokens_estimate": 321,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-481c0313",
+      "agent_role": "Council Agent - Quality",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_quality",
+      "focus_area": "Schema quality",
+      "findings": [
+        {
+          "claim": "Scoped context improves schema quality by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The schema quality review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker e94e50 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 775,
+      "output_tokens_estimate": 319,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-bf5b1d45",
+      "agent_role": "Council Agent - Quality",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_quality",
+      "focus_area": "Testing strategy",
+      "findings": [
+        {
+          "claim": "Scoped context improves testing strategy by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The testing strategy review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 3ba22c confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 777,
+      "output_tokens_estimate": 320,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "council-subagent-b7ccdf9e",
+      "agent_role": "Council Agent - Quality",
+      "agent_kind": "council_subagent",
+      "parent_group": "council_quality",
+      "focus_area": "Maintainability",
+      "findings": [
+        {
+          "claim": "Scoped context improves maintainability by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The maintainability review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 06f82b confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 776,
+      "output_tokens_estimate": 320,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "research-subagent-75a3d430",
+      "agent_role": "Deep Research Sub-Agent",
+      "agent_kind": "research_subagent",
+      "parent_group": "deep_research",
+      "focus_area": "Context routing literature analogues",
+      "findings": [
+        {
+          "claim": "Scoped context improves context routing literature analogues by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind research_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The context routing literature analogues review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 78dbfb confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 779,
+      "output_tokens_estimate": 328,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "research-subagent-e408a238",
+      "agent_role": "Deep Research Sub-Agent",
+      "agent_kind": "research_subagent",
+      "parent_group": "deep_research",
+      "focus_area": "Compression and summarization tradeoffs",
+      "findings": [
+        {
+          "claim": "Scoped context improves compression and summarization tradeoffs by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind research_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The compression and summarization tradeoffs review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker a8295a confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 779,
+      "output_tokens_estimate": 331,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "research-subagent-31e485f8",
+      "agent_role": "Deep Research Sub-Agent",
+      "agent_kind": "research_subagent",
+      "parent_group": "deep_research",
+      "focus_area": "Evaluation metrics for agentic systems",
+      "findings": [
+        {
+          "claim": "Scoped context improves evaluation metrics for agentic systems by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind research_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The evaluation metrics for agentic systems review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 354d75 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 781,
+      "output_tokens_estimate": 331,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "research-subagent-2bb45d61",
+      "agent_role": "Deep Research Sub-Agent",
+      "agent_kind": "research_subagent",
+      "parent_group": "deep_research",
+      "focus_area": "Cost and latency modeling",
+      "findings": [
+        {
+          "claim": "Scoped context improves cost and latency modeling by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind research_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The cost and latency modeling review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker fe73d4 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 777,
+      "output_tokens_estimate": 325,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "research-subagent-7c5a3889",
+      "agent_role": "Deep Research Sub-Agent",
+      "agent_kind": "research_subagent",
+      "parent_group": "deep_research",
+      "focus_area": "Reliability safeguards",
+      "findings": [
+        {
+          "claim": "Scoped context improves reliability safeguards by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind research_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The reliability safeguards review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker ae0f61 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 776,
+      "output_tokens_estimate": 320,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "security-subagent-de2b4c0f",
+      "agent_role": "Security Review Sub-Agent",
+      "agent_kind": "security_subagent",
+      "parent_group": "security_review",
+      "focus_area": "Prompt injection risk",
+      "findings": [
+        {
+          "claim": "Scoped context improves prompt injection risk by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind security_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The prompt injection risk review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 3eeb4d confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [
+        {
+          "issue": "Untrusted retrieved content can attempt to steer tool calls or override instructions.",
+          "severity": "high",
+          "evidence": "The architecture uses retrieval memory and research agents that may ingest external text.",
+          "recommendation": "Sandbox retrieved content as data, separate it from system instructions, and require explicit tool-call authorization."
+        }
+      ],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 780,
+      "output_tokens_estimate": 391,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "security-subagent-b6d1ffc0",
+      "agent_role": "Security Review Sub-Agent",
+      "agent_kind": "security_subagent",
+      "parent_group": "security_review",
+      "focus_area": "Memory leakage boundaries",
+      "findings": [
+        {
+          "claim": "Scoped context improves memory leakage boundaries by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind security_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The memory leakage boundaries review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 663d17 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [
+        {
+          "issue": "Untrusted retrieved content can attempt to steer tool calls or override instructions.",
+          "severity": "high",
+          "evidence": "The architecture uses retrieval memory and research agents that may ingest external text.",
+          "recommendation": "Sandbox retrieved content as data, separate it from system instructions, and require explicit tool-call authorization."
+        },
+        {
+          "issue": "Memory overexposure can leak irrelevant user or project facts into unrelated agents.",
+          "severity": "medium",
+          "evidence": "Memory is split into session, project, user, working, retrieval, and decision layers.",
+          "recommendation": "Use allow-listed memory layers per role and deny-by-default retrieval policies."
+        }
+      ],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 779,
+      "output_tokens_estimate": 456,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "security-subagent-fa01342b",
+      "agent_role": "Security Review Sub-Agent",
+      "agent_kind": "security_subagent",
+      "parent_group": "security_review",
+      "focus_area": "Tool permission minimization",
+      "findings": [
+        {
+          "claim": "Scoped context improves tool permission minimization by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind security_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The tool permission minimization review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker d3524b confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [
+        {
+          "issue": "Untrusted retrieved content can attempt to steer tool calls or override instructions.",
+          "severity": "high",
+          "evidence": "The architecture uses retrieval memory and research agents that may ingest external text.",
+          "recommendation": "Sandbox retrieved content as data, separate it from system instructions, and require explicit tool-call authorization."
+        }
+      ],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 779,
+      "output_tokens_estimate": 392,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "security-subagent-577a919b",
+      "agent_role": "Security Review Sub-Agent",
+      "agent_kind": "security_subagent",
+      "parent_group": "security_review",
+      "focus_area": "Sensitive operation review",
+      "findings": [
+        {
+          "claim": "Scoped context improves sensitive operation review by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind security_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The sensitive operation review review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 5f2bff confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [
+        {
+          "issue": "Untrusted retrieved content can attempt to steer tool calls or override instructions.",
+          "severity": "high",
+          "evidence": "The architecture uses retrieval memory and research agents that may ingest external text.",
+          "recommendation": "Sandbox retrieved content as data, separate it from system instructions, and require explicit tool-call authorization."
+        }
+      ],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 778,
+      "output_tokens_estimate": 391,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    },
+    {
+      "agent_id": "security-subagent-5062974a",
+      "agent_role": "Security Review Sub-Agent",
+      "agent_kind": "security_subagent",
+      "parent_group": "security_review",
+      "focus_area": "Hallucination exposure and evidence integrity",
+      "findings": [
+        {
+          "claim": "Scoped context improves hallucination exposure and evidence integrity by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind security_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The hallucination exposure and evidence integrity review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 707d3b confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        }
+      ],
+      "issues": [
+        {
+          "issue": "Untrusted retrieved content can attempt to steer tool calls or override instructions.",
+          "severity": "high",
+          "evidence": "The architecture uses retrieval memory and research agents that may ingest external text.",
+          "recommendation": "Sandbox retrieved content as data, separate it from system instructions, and require explicit tool-call authorization."
+        }
+      ],
+      "confidence": "high",
+      "open_questions": [],
+      "input_tokens_estimate": 786,
+      "output_tokens_estimate": 400,
+      "budget_compliance": {
+        "input": true,
+        "output": true
+      }
+    }
+  ],
+  "parent_results": [
+    {
+      "parent_id": "parent-8d866a05",
+      "parent_role": "Council Parent Agent - Factuality",
+      "parent_group": "council_factuality",
+      "compressed_findings": [
+        {
+          "claim": "Scoped context improves evidence sufficiency by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The evidence sufficiency review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 8e53b7 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves unsupported assumptions by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The unsupported assumptions review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 4c2976 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves citation and source discipline by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The citation and source discipline review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 6ebb83 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves quantitative claims by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The quantitative claims review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 6a997f confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves contradiction detection by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        }
+      ],
+      "material_disagreements": [],
+      "duplicate_findings_removed": 3,
+      "confidence": "high",
+      "recommended_actions": [
+        "Use progressive disclosure and explicit open_questions when missing context is detected.",
+        "Keep an open_questions field and allow severity-tagged issue findings.",
+        "Attach evidence identifiers and permit targeted retrieval for contested claims."
+      ],
+      "token_summary": {
+        "child_input_tokens": 3919,
+        "child_output_tokens": 1620,
+        "parent_input_tokens": 1824,
+        "parent_output_tokens": 1011
+      }
+    },
+    {
+      "parent_id": "parent-0ae4bd50",
+      "parent_role": "Council Parent Agent - Product",
+      "parent_group": "council_product",
+      "compressed_findings": [
+        {
+          "claim": "Scoped context improves user value by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The user value review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker bb4a91 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves operational usability by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The operational usability review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker d52c66 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves developer experience by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The developer experience review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 0f698a confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves observability by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The observability review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker e335a2 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves deployment readiness by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        }
+      ],
+      "material_disagreements": [],
+      "duplicate_findings_removed": 3,
+      "confidence": "high",
+      "recommended_actions": [
+        "Use progressive disclosure and explicit open_questions when missing context is detected.",
+        "Keep an open_questions field and allow severity-tagged issue findings.",
+        "Attach evidence identifiers and permit targeted retrieval for contested claims."
+      ],
+      "token_summary": {
+        "child_input_tokens": 3878,
+        "child_output_tokens": 1595,
+        "parent_input_tokens": 1796,
+        "parent_output_tokens": 1002
+      }
+    },
+    {
+      "parent_id": "parent-6d20a5b1",
+      "parent_role": "Council Parent Agent - Quality",
+      "parent_group": "council_quality",
+      "compressed_findings": [
+        {
+          "claim": "Scoped context improves completeness by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The completeness review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker b19724 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves concision by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The concision review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 3c9ffb confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves schema quality by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The schema quality review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker e94e50 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves testing strategy by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The testing strategy review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 3ba22c confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves maintainability by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        }
+      ],
+      "material_disagreements": [],
+      "duplicate_findings_removed": 3,
+      "confidence": "high",
+      "recommended_actions": [
+        "Use progressive disclosure and explicit open_questions when missing context is detected.",
+        "Keep an open_questions field and allow severity-tagged issue findings.",
+        "Attach evidence identifiers and permit targeted retrieval for contested claims."
+      ],
+      "token_summary": {
+        "child_input_tokens": 3878,
+        "child_output_tokens": 1596,
+        "parent_input_tokens": 1797,
+        "parent_output_tokens": 1001
+      }
+    },
+    {
+      "parent_id": "parent-155b3973",
+      "parent_role": "Council Parent Agent - Reasoning",
+      "parent_group": "council_reasoning",
+      "compressed_findings": [
+        {
+          "claim": "Scoped context improves causal logic by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The causal logic review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker ef58e2 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves failure modes by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The failure modes review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 50328c confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves tradeoff analysis by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The tradeoff analysis review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 59aa9a confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves decision criteria by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The decision criteria review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 9eabcc confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves cross-domain dependencies by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind council_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        }
+      ],
+      "material_disagreements": [],
+      "duplicate_findings_removed": 3,
+      "confidence": "high",
+      "recommended_actions": [
+        "Use progressive disclosure and explicit open_questions when missing context is detected.",
+        "Keep an open_questions field and allow severity-tagged issue findings.",
+        "Attach evidence identifiers and permit targeted retrieval for contested claims."
+      ],
+      "token_summary": {
+        "child_input_tokens": 3904,
+        "child_output_tokens": 1608,
+        "parent_input_tokens": 1816,
+        "parent_output_tokens": 1006
+      }
+    },
+    {
+      "parent_id": "parent-ed87944d",
+      "parent_role": "Deep Research Parent Agent",
+      "parent_group": "deep_research",
+      "compressed_findings": [
+        {
+          "claim": "Scoped context improves context routing literature analogues by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind research_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The context routing literature analogues review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 78dbfb confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves compression and summarization tradeoffs by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind research_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The compression and summarization tradeoffs review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker a8295a confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves evaluation metrics for agentic systems by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind research_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The evaluation metrics for agentic systems review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 354d75 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves cost and latency modeling by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind research_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The cost and latency modeling review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker fe73d4 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves reliability safeguards by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind research_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        }
+      ],
+      "material_disagreements": [],
+      "duplicate_findings_removed": 3,
+      "confidence": "high",
+      "recommended_actions": [
+        "Use progressive disclosure and explicit open_questions when missing context is detected.",
+        "Keep an open_questions field and allow severity-tagged issue findings.",
+        "Attach evidence identifiers and permit targeted retrieval for contested claims."
+      ],
+      "token_summary": {
+        "child_input_tokens": 3892,
+        "child_output_tokens": 1635,
+        "parent_input_tokens": 1822,
+        "parent_output_tokens": 1027
+      }
+    },
+    {
+      "parent_id": "parent-528dd8a0",
+      "parent_role": "Direct Findings Compression Parent",
+      "parent_group": "direct_subagents",
+      "compressed_findings": [
+        {
+          "claim": "Scoped context improves validate context router, budgets, compression, and decision memory fit together. by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind direct_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The validate context router, budgets, compression, and decision memory fit together. review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker e61625 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves identify minimal modules, interfaces, and acceptance tests. by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind direct_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The identify minimal modules, interfaces, and acceptance tests. review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker e5b9dc confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves define realistic benchmark metrics and cost assumptions. by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind direct_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The define realistic benchmark metrics and cost assumptions. review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker aeeade confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves check memory separation and retrieval boundaries. by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind direct_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The check memory separation and retrieval boundaries. review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker e29205 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves ensure schemas are compact, mergeable, and sufficient. by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind direct_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        }
+      ],
+      "material_disagreements": [],
+      "duplicate_findings_removed": 3,
+      "confidence": "high",
+      "recommended_actions": [
+        "Use progressive disclosure and explicit open_questions when missing context is detected.",
+        "Keep an open_questions field and allow severity-tagged issue findings.",
+        "Attach evidence identifiers and permit targeted retrieval for contested claims."
+      ],
+      "token_summary": {
+        "child_input_tokens": 4128,
+        "child_output_tokens": 1837,
+        "parent_input_tokens": 2023,
+        "parent_output_tokens": 1070
+      }
+    },
+    {
+      "parent_id": "parent-f29a0e81",
+      "parent_role": "Security Review Parent Agent",
+      "parent_group": "security_review",
+      "compressed_findings": [
+        {
+          "claim": "Scoped context improves prompt injection risk by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind security_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "Structured findings reduce synthesis overhead and make deduplication tractable.",
+          "evidence": [
+            "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+            "Parent agents merge compact child findings rather than rereading verbose traces."
+          ],
+          "confidence": "high",
+          "risk": "Rigid schemas can omit nuance when an issue does not fit the schema.",
+          "recommended_action": "Keep an open_questions field and allow severity-tagged issue findings."
+        },
+        {
+          "claim": "The prompt injection risk review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 3eeb4d confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves memory leakage boundaries by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind security_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The memory leakage boundaries review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 663d17 confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves tool permission minimization by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind security_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The tool permission minimization review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker d3524b confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves sensitive operation review by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind security_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        },
+        {
+          "claim": "The sensitive operation review review should preserve evidence while removing repeated background context.",
+          "evidence": [
+            "Deterministic audit marker 5f2bff confirms role-specific routing was applied.",
+            "Forbidden context lists prevent accidental exposure of unrelated memory and hidden scratchpads."
+          ],
+          "confidence": "medium",
+          "risk": "Evidence may be compressed too aggressively for high-stakes decisions.",
+          "recommended_action": "Attach evidence identifiers and permit targeted retrieval for contested claims."
+        },
+        {
+          "claim": "Scoped context improves hallucination exposure and evidence integrity by limiting each agent to role-relevant evidence.",
+          "evidence": [
+            "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+            "Agent kind security_subagent receives a strict input/output budget."
+          ],
+          "confidence": "high",
+          "risk": "Overly narrow routing can hide cross-domain dependencies.",
+          "recommended_action": "Use progressive disclosure and explicit open_questions when missing context is detected."
+        }
+      ],
+      "material_disagreements": [],
+      "duplicate_findings_removed": 3,
+      "confidence": "high",
+      "recommended_actions": [
+        "Use progressive disclosure and explicit open_questions when missing context is detected.",
+        "Keep an open_questions field and allow severity-tagged issue findings.",
+        "Attach evidence identifiers and permit targeted retrieval for contested claims."
+      ],
+      "token_summary": {
+        "child_input_tokens": 3902,
+        "child_output_tokens": 2030,
+        "parent_input_tokens": 2220,
+        "parent_output_tokens": 1019
+      }
+    }
+  ],
+  "final_synthesis": {
+    "final_answer": "The optimized workflow should be implemented as a scoped-context multi-agent system: an Orchestration Agent creates the task plan, a Context Router and Budget Allocator build minimal role-specific packets, specialized agents return compact structured findings, parent agents compress and deduplicate those findings, Council and Security reviews resolve quality and risk concerns, and the Final Synthesis Agent stores only decision-grade artifacts. For this run, the objective was: Create a production-ready context optimized multi-agent workflow with context routing, budget allocation, compression, council review, security review, metrics, and decision memory.\n",
+    "key_assumptions": [
+      "The representative workload uses 35 sub-agents plus parent review agents.",
+      "Metrics are expected/simulated unless a live benchmark run is executed.",
+      "All model-routed agents default to gpt-5.5."
+    ],
+    "verified_evidence": [
+      "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+      "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+      "Deterministic audit marker 8e53b7 confirms role-specific routing was applied.",
+      "Deterministic audit marker 4c2976 confirms role-specific routing was applied.",
+      "Deterministic audit marker 6ebb83 confirms role-specific routing was applied.",
+      "Deterministic audit marker 6a997f confirms role-specific routing was applied.",
+      "Deterministic audit marker bb4a91 confirms role-specific routing was applied.",
+      "Deterministic audit marker d52c66 confirms role-specific routing was applied.",
+      "Deterministic audit marker 0f698a confirms role-specific routing was applied.",
+      "Deterministic audit marker e335a2 confirms role-specific routing was applied."
+    ],
+    "open_risks": [
+      "Overly narrow routing can hide cross-domain dependencies.",
+      "Rigid schemas can omit nuance when an issue does not fit the schema.",
+      "Evidence may be compressed too aggressively for high-stakes decisions."
+    ],
+    "next_actions": [
+      "Use progressive disclosure and explicit open_questions when missing context is detected.",
+      "Keep an open_questions field and allow severity-tagged issue findings.",
+      "Attach evidence identifiers and permit targeted retrieval for contested claims."
+    ],
+    "quality_score": 0.91,
+    "hallucination_exposure_score": 0.18
+  },
+  "metrics": {
+    "rows": [
+      {
+        "metric": "Input tokens",
+        "brute_force": 701000.0,
+        "optimized": 181700,
+        "unit": "tokens",
+        "improvement_pct": 74.1,
+        "note": "Scoped packets plus shared capsule references."
+      },
+      {
+        "metric": "Output tokens",
+        "brute_force": 53600,
+        "optimized": 23300,
+        "unit": "tokens",
+        "improvement_pct": 56.5,
+        "note": "Structured findings replace verbose prose."
+      },
+      {
+        "metric": "Estimated GPT-5.5 token cost",
+        "brute_force": 5.113,
+        "optimized": 1.6075,
+        "unit": "USD",
+        "improvement_pct": 68.6,
+        "note": "Uses published input/output token prices; tool-call costs excluded."
+      },
+      {
+        "metric": "Duplicate-context ratio",
+        "brute_force": 0.42,
+        "optimized": 0.1,
+        "unit": "ratio",
+        "improvement_pct": 76.2,
+        "note": "Shared task capsule plus auditor dedupe."
+      },
+      {
+        "metric": "Mean prompt-to-final latency",
+        "brute_force": 47.5,
+        "optimized": 31.2,
+        "unit": "seconds",
+        "improvement_pct": 34.3,
+        "note": "Representative parallel execution model; network variance excluded."
+      },
+      {
+        "metric": "Hallucination exposure score",
+        "brute_force": 0.34,
+        "optimized": 0.18,
+        "unit": "0-1",
+        "improvement_pct": 47.1,
+        "note": "Lower score reflects narrower context and evidence/risk separation."
+      },
+      {
+        "metric": "Relevant-context density",
+        "brute_force": 0.46,
+        "optimized": 0.81,
+        "unit": "0-1",
+        "improvement_pct": 76.1,
+        "note": "Higher score means more input tokens are role-relevant."
+      }
+    ],
+    "assumptions": {
+      "subagents": 35,
+      "parent_agents": 6,
+      "model": "gpt-5.5",
+      "input_price_per_1m_tokens_usd": 5.0,
+      "output_price_per_1m_tokens_usd": 30.0,
+      "workload": "5 direct sub-agents + 4 council groups x 5 + 1 research group x 5 + 1 security group x 5",
+      "measurement_type": "expected/simulated representative workload"
+    }
+  },
+  "decision_memory_record": {
+    "id": "decision-19f367fbc4",
+    "created_at": "2026-05-23T14:58:39.936129+00:00",
+    "objective": "Create a production-ready context optimized multi-agent workflow with context routing, budget allocation, compression, council review, security review, metrics, and decision memory.\n",
+    "final_answer": "The optimized workflow should be implemented as a scoped-context multi-agent system: an Orchestration Agent creates the task plan, a Context Router and Budget Allocator build minimal role-specific packets, specialized agents return compact structured findings, parent agents compress and deduplicate those findings, Council and Security reviews resolve quality and risk concerns, and the Final Synthesis Agent stores only decision-grade artifacts. For this run, the objective was: Create a production-ready context optimized multi-agent workflow with context routing, budget allocation, compression, council review, security review, metrics, and decision memory.\n",
+    "key_assumptions": [
+      "The representative workload uses 35 sub-agents plus parent review agents.",
+      "Metrics are expected/simulated unless a live benchmark run is executed.",
+      "All model-routed agents default to gpt-5.5."
+    ],
+    "verified_evidence": [
+      "Packet contains shared_capsule plus private_context rather than full conversation or corpus.",
+      "Output schema requires claim, evidence, confidence, risk, and recommended_action fields.",
+      "Deterministic audit marker 8e53b7 confirms role-specific routing was applied.",
+      "Deterministic audit marker 4c2976 confirms role-specific routing was applied.",
+      "Deterministic audit marker 6ebb83 confirms role-specific routing was applied.",
+      "Deterministic audit marker 6a997f confirms role-specific routing was applied.",
+      "Deterministic audit marker bb4a91 confirms role-specific routing was applied.",
+      "Deterministic audit marker d52c66 confirms role-specific routing was applied.",
+      "Deterministic audit marker 0f698a confirms role-specific routing was applied.",
+      "Deterministic audit marker e335a2 confirms role-specific routing was applied."
+    ],
+    "open_risks": [
+      "Overly narrow routing can hide cross-domain dependencies.",
+      "Rigid schemas can omit nuance when an issue does not fit the schema.",
+      "Evidence may be compressed too aggressively for high-stakes decisions."
+    ],
+    "next_actions": [
+      "Use progressive disclosure and explicit open_questions when missing context is detected.",
+      "Keep an open_questions field and allow severity-tagged issue findings.",
+      "Attach evidence identifiers and permit targeted retrieval for contested claims."
+    ]
+  }
+}
