@@ -24,6 +24,7 @@ The core design principle is **minimum sufficient context**: each agent receives
 - Context Router, Context Auditor, layered memory, hierarchical compression, council review, security review, and final synthesis
 - Structured JSON output schemas for sub-agents, parent agents, and final synthesis
 - Academic-style architecture diagram in SVG, PNG, and PDF
+- Publication-style evaluation in Markdown, LaTeX, and compiled PDF form
 - Reproducible expected metrics simulator
 - Bundled system prompts for every workflow role
 - Unit tests
@@ -103,8 +104,13 @@ The implemented workflow uses the topology specified in the prompt:
 | Council Agents | 4 x 5 = 20 | Factuality, reasoning, product, and quality review |
 | Deep Research Agents | 5 | Evidence, tradeoffs, cost, latency, reliability |
 | Security Review Agents | 5 | Injection, memory leakage, permissions, sensitive operations, hallucination exposure |
-| Parent Agents | 6 | Compress, deduplicate, compare, and summarize child findings |
+| Parent Agents | 7 observed at runtime | Compress, deduplicate, compare, and summarize child findings across direct, council, research, and security groups |
 | Final Synthesis Agent | 1 | Produces final answer and decision-memory record |
+
+The original design notes and metrics simulator describe 6 parent agents. The
+current implementation produces 7 parent groups at runtime: `direct_subagents`,
+the four council groups, `deep_research`, and `security_review`. This mismatch is
+tracked in the publication findings.
 
 ## Context packet contract
 
@@ -186,6 +192,37 @@ The included simulator models a representative 35-sub-agent workload. These are 
 | Relevant-context density | 0.46 | 0.81 | 76.1% higher |
 
 Cost estimates use the published GPT-5.5 token price assumption bundled in `metrics.py`: $5.00 per 1M input tokens and $30.00 per 1M output tokens. Tool-call fees are excluded.
+
+## Publication findings
+
+The reproducibility review is available in:
+
+```text
+docs/PUBLICATION.md
+docs/PUBLICATION.tex
+docs/PUBLICATION.pdf
+```
+
+The evaluation found:
+
+| Area | Result |
+|---|---|
+| Deterministic workflow | Completed with 35 agent results, 7 parent results, 35 audited packets, and no over-budget packets. |
+| Audit estimate | Reduced packet input estimate from 30,451 to 15,513 tokens and removed an estimated 17,554 duplicate-context tokens. |
+| Final scores | Mock run reported quality score 0.91 and hallucination-exposure score 0.18. |
+| Local gates | Ruff, bytecode compilation, unittest, and pytest pass after unused-import cleanup. |
+| Metrics status | Token, cost, latency, density, and hallucination-exposure results are simulated planning estimates, not production benchmarks. |
+| Live OpenAI smoke test | `gpt-5.5` API access worked. |
+| Full live workflow | Not production-ready yet: strict JSON responses can be truncated at `max_output_tokens`, producing `JSONDecodeError` before artifacts are written. |
+
+Remaining production work:
+
+1. Add a response-normalization layer for completed, incomplete, refused, and malformed OpenAI Responses API outputs.
+2. Recalibrate output budgets against each strict JSON schema and add regression tests for schema-fit.
+3. Resolve the documented 6-parent topology versus the observed 7-parent runtime topology.
+4. Add an empirical benchmark mode that records live token usage, cached tokens, retries, latency, and failure rates.
+5. Add strict type checking because the package ships `py.typed`.
+6. Persist partial live-run artifacts so one agent failure does not discard completed evidence.
 
 ## Run tests
 
